@@ -1,0 +1,76 @@
+:root {
+    --rt-blue: #001a4d;
+    --rt-orange: #ff4f12;
+    --dark: #000a1a;
+    --glass: rgba(255, 255, 255, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: var(--dark); color: white; overflow-x: hidden; }
+
+/* Прелоадер */
+#loader { position: fixed; inset: 0; background: var(--dark); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: 0.5s; }
+.spinner { width: 50px; height: 50px; border: 3px solid var(--rt-orange); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+/* Главный фон */
+.hero-parallax {
+    min-height: 100vh;
+    background: url('https://raw.githubusercontent.com/dixize/dixize.github.io/main/main-bg.png') center/cover fixed;
+    position: relative;
+    padding: 60px 0;
+}
+.hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, rgba(0,26,77,0.7) 0%, rgba(0,0,0,0.9) 100%); }
+
+.rt-logo { height: 45px; filter: brightness(0) invert(1); }
+.biz-label { font-size: 24px; font-weight: bold; border-left: 2px solid var(--rt-orange); padding-left: 15px; margin-left: 15px; }
+
+h1 { font-size: clamp(2rem, 5vw, 4rem); margin-top: 80px; text-transform: uppercase; font-weight: 900; line-height: 1.1; }
+.subtitle { font-size: 1.5rem; opacity: 0.7; margin: 20px 0 60px; }
+
+/* Сетка кнопок */
+.main-nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.nav-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px 30px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    animation-delay: var(--delay);
+}
+.nav-card:hover {
+    background: var(--rt-orange);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 79, 18, 0.3);
+}
+.card-num { font-size: 3rem; font-weight: 800; opacity: 0.2; margin-bottom: 15px; }
+.card-arrow { margin-top: 20px; font-size: 1.5rem; transform: translateX(0); transition: 0.3s; }
+.nav-card:hover .card-arrow { transform: translateX(10px); }
+
+/* Терра */
+.terra-full { padding: 120px 0; background: white; color: var(--rt-blue); }
+.divider { width: 80px; height: 4px; background: var(--rt-orange); margin: 30px auto; }
+.terra-header { text-align: center; max-width: 900px; margin: 0 auto 80px; }
+.terra-blocks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.t-block { padding: 40px; background: #f8f9ff; border-radius: 30px; transition: 0.3s; }
+.t-block:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+.t-icon { font-size: 3rem; margin-bottom: 20px; }
+
+/* Экран деталей */
+.details-screen {
+    position: fixed; inset: 0; background: var(--dark); z-index: 10000;
+    overflow-y: auto; padding: 80px 0; display: none;
+}
+.details-screen.visible { display: block; animation: slideUp 0.6s ease; }
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.close-details { position: fixed; top: 30px; right: 40px; background: var(--rt-orange); border: none; color: white; padding: 12px 25px; border-radius: 50px; cursor: pointer; z-index: 10001; }
+
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+.case-card { background: #1a263a; border-radius: 15px; overflow: hidden; }
+.case-card img { width: 100%; height: 200px; object-fit: cover; }
+.case-card h4 { padding: 15px; color: var(--rt-orange); }
+.case-card ul { padding: 0 15px 15px; font-size: 0.9rem; list-style: none; opacity: 0.8; }

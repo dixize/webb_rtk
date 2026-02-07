@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ростелеком Бизнес | Отраслевые решения</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <main id="home">
+        <section class="hero-parallax">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <header class="animate__animated animate__fadeInDown">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Rostelecom_logo_2018.svg/1200px-Rostelecom_logo_2018.svg.png" alt="Ростелеком" class="rt-logo">
+                    <span class="biz-label">Бизнес</span>
+                </header>
+                
+                <h1 class="animate__animated animate__zoomIn">Отраслевые решения ПАО «РОСТЕЛЕКОМ»</h1>
+                <p class="subtitle">Инновационные технологии для трансформации вашего производства</p>
+
+                <div class="main-nav-grid">
+                    <div class="nav-card animate__animated animate__fadeInUp" onclick="openProject('robotics')" style="--delay: 0.1s">
+                        <div class="card-num">01</div>
+                        <h3>Роботизация производства</h3>
+                        <div class="card-arrow">→</div>
+                    </div>
+                    <div class="nav-card animate__animated animate__fadeInUp" onclick="openProject('quality')" style="--delay: 0.2s">
+                        <div class="card-num">02</div>
+                        <h3>Контроль качества продукции</h3>
+                        <div class="card-arrow">→</div>
+                    </div>
+                    <div class="nav-card animate__animated animate__fadeInUp" onclick="openProject('security')" style="--delay: 0.3s">
+                        <div class="card-num">03</div>
+                        <h3>Средства охраны (ИТСО)</h3>
+                        <div class="card-arrow">→</div>
+                    </div>
+                    <div class="nav-card animate__animated animate__fadeInUp" onclick="openProject('eco')" style="--delay: 0.4s">
+                        <div class="card-num">04</div>
+                        <h3>Экомониторинг и Промбезопасность</h3>
+                        <div class="card-arrow">→</div>
+                    </div>
+                    <div class="nav-card animate__animated animate__fadeInUp" onclick="openProject('equipment')" style="--delay: 0.5s">
+                        <div class="card-num">05</div>
+                        <h3>Технологическое оборудование</h3>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="terra-full" id="terra">
+            <div class="container">
+                <div class="terra-header">
+                    <h2 class="animate__animated animate__fadeIn">Проектный офис «Терра»</h2>
+                    <div class="divider"></div>
+                    <p class="terra-main-text">Мы создаем цифровой фундамент для технологического лидерства вашего бизнеса. Проектный офис сопровождает заказчика на всех этапах цифровой трансформации — от идеи до сервиса.</p>
+                </div>
+
+                <div class="terra-blocks">
+                    <div class="t-block">
+                        <div class="t-icon">🛠</div>
+                        <h3>Комплексный подход</h3>
+                        <p>Полный цикл реализации: аудит предприятия, проектирование архитектуры, поставка и внедрение тяжелых ИТ-решений, последующее сервисное обслуживание 24/7.</p>
+                    </div>
+                    <div class="t-block">
+                        <div class="t-icon">🇷🇺</div>
+                        <h3>Импортозамещение</h3>
+                        <p>Приоритет на российское ПО и оборудование в рамках национальных проектов. Работа с КИИ (критической информационной инфраструктурой) по ФЗ-187.</p>
+                    </div>
+                    <div class="t-block">
+                        <div class="t-icon">📈</div>
+                        <h3>Масштабируемость</h3>
+                        <p>Наши решения одинаково эффективно работают как на малых заводах, так и на гигантских госкорпорациях федерального уровня.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="details-view" class="details-screen hidden">
+        <button class="close-details" onclick="closeProject()">✕ Закрыть</button>
+        <div id="details-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
